@@ -15,6 +15,7 @@ type Result struct {
 	Results []Emoji `json:"results"`
 }
 
+//Find emoji
 func FindEmoji(text string)([]Emoji, error){
 	encodedText, err := UrlEncoded(text)
 	if err != nil {
@@ -32,6 +33,7 @@ func FindEmoji(text string)([]Emoji, error){
 	return emojiResult.Results, nil
 }
 
+// Encode string
 func UrlEncoded(str string) (string, error) {
 	u, err := url.Parse(str)
 	if err != nil {
