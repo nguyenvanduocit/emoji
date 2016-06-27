@@ -12,11 +12,11 @@ type Emoji struct{
 }
 
 type Result struct {
-	Results []Emoji `json:"results"`
+	Results []*Emoji `json:"results"`
 }
 
 //Find emoji
-func FindEmoji(text string)([]Emoji, error){
+func FindEmoji(text string)([]*Emoji, error){
 	encodedText, err := UrlEncoded(text)
 	if err != nil {
 		return nil, err
